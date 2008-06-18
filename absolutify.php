@@ -13,7 +13,7 @@ Works for links using both single and double quotes. Also handy if you ever move
 
 function absolutify_content_urls($content) {
 	$url = get_bloginfo('url');
-	return preg_replace("/href=(\"|')\//", "href=\1$url/", $content);
+	return preg_replace("/href=(\"|')\//", "href=\${1}$url/", $content);
 }
 
 add_filter('the_content', 'absolutify_content_urls');
