@@ -6,6 +6,9 @@ Description: Turn relative URIs in posts, pages and comments into absolute ones.
 Author: Benedict Eastaugh
 Version: 1.1
 Author URI: http://extralogical.net/
+.
+Absolutify is released under the GPL. Please see the LICENCE file for details.
+.
 */
 
 /**
@@ -26,7 +29,7 @@ function absolutify_content_urls($content) {
     return preg_replace("/href=(\"|')\//", "href=\${1}$url/", $content);
 }
 
-add_filter('the_content', 'absolutify_content_urls');
+add_filter('the_content',  'absolutify_content_urls');
 add_filter('comment_text', 'absolutify_content_urls');
 
 ?>
